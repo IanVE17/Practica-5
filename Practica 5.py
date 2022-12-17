@@ -2,6 +2,7 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver import ActionChains
 from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.support.ui import Select
 
 import time
 
@@ -68,9 +69,27 @@ def comprarCarrito():
     driver.find_element(By.CLASS_NAME, "minicart-wrapper").click()
     time.sleep(2)
     driver.find_element(By.ID, "top-cart-btn-checkout").click()
+    time.sleep(2)
+    driver.find_element(By.XPATH, '//*[@id="customer-email"]').send_keys("Tests@gmail.com")
+    time.sleep(2)
+    driver.find_element(By.XPATH, '/html/body/div[2]/main/div[2]/div/div[2]/div[4]/ol/li[1]/div[2]/form[2]/div/div[1]/div/input').send_keys("test")
+    driver.find_element(By.XPATH, '/html/body/div[2]/main/div[2]/div/div[2]/div[4]/ol/li[1]/div[2]/form[2]/div/div[2]/div/input').send_keys("test")
+    driver.find_element(By.XPATH, '/html/body/div[2]/main/div[2]/div/div[2]/div[4]/ol/li[1]/div[2]/form[2]/div/div[3]/div/input').send_keys("test")
+    driver.find_element(By.XPATH, '/html/body/div[2]/main/div[2]/div/div[2]/div[4]/ol/li[1]/div[2]/form[2]/div/fieldset/div/div[1]/div/input').send_keys("test")
+    driver.find_element(By.XPATH, '/html/body/div[2]/main/div[2]/div/div[2]/div[4]/ol/li[1]/div[2]/form[2]/div/div[4]/div/input').send_keys("test")
+    driver.find_element(By.XPATH, '/html/body/div[2]/main/div[2]/div/div[2]/div[4]/ol/li[1]/div[2]/form[2]/div/div[7]/div/input').send_keys("12345")
+    driver.find_element(By.XPATH, '/html/body/div[2]/main/div[2]/div/div[2]/div[4]/ol/li[1]/div[2]/form[2]/div/div[9]/div/input').send_keys("test")
+    driver.find_element(By.XPATH, '/html/body/div[2]/main/div[2]/div/div[2]/div[4]/ol/li[2]/div/div[3]/form/div[1]/table/tbody/tr[1]/td[1]/input').click()
+    Select(driver.find_element(By.XPATH, '/html/body/div[2]/main/div[2]/div/div[2]/div[4]/ol/li[1]/div[2]/form[2]/div/div[5]/div/select')).select_by_index(3)
+    Select(driver.find_element(By.XPATH, '/html/body/div[2]/main/div[2]/div/div[2]/div[4]/ol/li[1]/div[2]/form[2]/div/div[8]/div/select')).select_by_index(2)
+    driver.find_element(By.XPATH, '/html/body/div[2]/main/div[2]/div/div[2]/div[4]/ol/li[2]/div/div[3]/form/div[3]/div/button').click()
+    time.sleep(2)
+    driver.find_element(By.XPATH, '/html/body/div[3]/main/div[2]/div/div[2]/div[4]/ol/li[2]/div/div[3]/form/div[3]/div/button').click()
+    time.sleep(5)
+    driver.find_element(By.XPATH, '//*[@id="checkout-payment-method-load"]/div/div/div[2]/div[2]/div[4]/div/button').click()
 
     
-    #driver.close()
+#driver.close()
 
 #crearCuenta()
 
